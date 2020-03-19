@@ -11014,6 +11014,14 @@ html.no-mobile .pg-button--dark:hover {
   background: #CB8AC0; }
 
 /* stylelint-disable selector-list-comma-newline-after */
+.header-jbtn {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem; }
+  .header-jbtn .banner-img {
+    display: block;
+    width: 200px;
+    height: auto; }
+
 .go-down {
   display: inline-block;
   width: 50px;
