@@ -11021,7 +11021,9 @@ html.no-mobile .pg-button--dark:hover {
   border-radius: 50px;
   border: 1px solid silver;
   background-color: #e5e5e5;
-  position: relative; }
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
   .go-down:after {
     content: "";
     display: block;
@@ -11035,6 +11037,34 @@ html.no-mobile .pg-button--dark:hover {
     -webkit-transform: translate(-50%, -50%) rotate(45deg);
         -ms-transform: translate(-50%, -50%) rotate(45deg);
             transform: translate(-50%, -50%) rotate(45deg); }
+  .go-down:hover {
+    background-color: #999999;
+    box-shadow: 0 2px 10px -3px rgba(0, 0, 0, 0.8); }
+    .go-down:hover:after {
+      border-color: white; }
+
+.separator {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 30px auto;
+  border-radius: 16px;
+  border: 1px solid #999999;
+  background-color: #999999;
+  position: relative; }
+  .separator:before, .separator:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 1px solid #999999;
+    background-color: #999999;
+    position: absolute;
+    top: 3px; }
+  .separator:before {
+    left: -50px; }
+  .separator:after {
+    right: -50px; }
 
 .blog-header {
   line-height: 1;
