@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes,minimum-scale=1,maximum-scale=1">
+    
+    <!--<link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">-->
+    <link rel="stylesheet" href="/css/base.min.css">
+    
+    <title>
+      Чому такі спалахи, як коронавірус,
+      поширюються експоненціально, і
+      як можна "вирівняти цю криву"
+    </title>
+    <meta name="description" content="The early trickle of new coronavirus infections has turned into a steady current. By creating simple simulations, we can see how to slow it down.">
+    <meta name="keywords" content="coronavirus,simulation">
+</head>
+<body>
+
+<!-- START HEADER -->
+
+
+
+<!-- /END HEADER -->
+
+
+
+<article class="pg-article" role="main">
+  
+  <header id="pg-content" class="pg-header pg-header--center">
+    <div class="pg-display">
+      <div style="margin: 0 auto; display: table; margin-bottom: 30px;" class="pg-kicker">
+        <div><img style="margin-bottom: 30px; width: 200px; max-width: 100%"
+                  src="img/sig-gif.gif"
+                  class="initial loading" data-was-processed="true"></div>
+      </div>
+      <h1 style="padding-left: 15px; padding-right: 15px; visibility: visible;" class="pg-h1 balanced-headline">
+        Чому такі спалахи як коронавірус<br>
+        поширюються експоненціально <br>
+        і як можна "вирівняти цю криву"
+      </h1>
+    </div>
+    
+    <div class="pg-byline-social">
+      <div class="pg-byline" style="text-align: center;">
+      <span class="pg-byline--author-wrap">
+        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">Автор </font></font>
+        <span class="pg-byline--author">
+          <a href="https://www.washingtonpost.com/people/harry-stevens/">
+            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class="">Гаррі Стівенс</font></font>
+          </a>
+        </span>
+      </span>
+        <font style="vertical-align: inherit;">
+        <span class="pg-pubDate">
+          <span itemprop="datePublished" content="2020-03-14T21:00:00.000Z">
+            <font style="vertical-align: inherit;" class=""> 14 березня 2020 року</font>
+          </span>
+        </span>
+        </font>
+      </div>
+    </div>
+  </header>
+  
+  <div class="block" data-block-type="free-content">
+    <div id="free-content">
+      <div class="inner-content">
+        <div class="note">Зверніть увагу</div>
+        <div class="text">
+          The Washington Post надає цю історію безкоштовно, щоб усі читачі мали доступ до цієї важливої інформації про коронавірус.
+          Щоб отримати більше безкоштовних історій,
+          <a href="https://subscribe.washingtonpost.com/newsletters/#/bundle/health?method=SURL&amp;location=ART&amp;initiative=FREE">
+            підпишіться на наш щоденний інформаційний бюлетень Coronavirus Updates</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="gif">
+    <div id="gif-mode">
+      <div id="gif-basic" class="gif-chart"></div>
+      <div id="gif-quarantine" class="gif-chart"></div>
+      <div id="gif-stop" class="gif-chart"></div>
+      <div id="gif-stop-more" class="gif-chart"></div>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny"><p class="pg-bodyCopy">
+      Після першого випадку  <a href="https://www.washingtonpost.com/health/2020/01/21/coronavirus-us-case/">
+      захворювання на коронавірус у США</a>, викликаного новим штамом covid-19,
+      інтенсивність зараження протікала повільно. Та через два місяці інтенсивність перетворилась на стрімкий потік.</p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="us-line">
+    <div id="us-line" class="pg-skinny">
+      <div class="chart">
+      </div>
+      <div class="instructions pg-skinny pg-helper pg-helper--emphasize pg-helper--instructions">
+        <span class="hover-tap" style="display: inline-block;text-indent: 100%;white-space: nowrap;overflow: hidden;width: 0;"></span>
+        Наведіть курсор, щоб побачити кількість хворих з плином часу.
+      </div>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy"> Ця, так звана, <span class="small-chart">експоненціальна крива</span>
+        сильно занепокоїла експертів. Якби така тенденція поширення вірусу продовжилась і надалі - вдвічі більше хворих кожних три дні -
+        тоді ще до травня у США кількість заражених сягнуло б <b>ста мільйонів</b>.
+      </p>
+      
+      <p class="pg-bodyCopy">Це математика, а не пророкування. "Поширення може бути сповільнено -
+        кажуть фахівці з охорони здоров’я - якщо люди практикуватимуть
+        &laquo;<a href="https://www.washingtonpost.com/health/2020/03/10/social-distancing-coronavirus/">соціальне дистанціювання</a>&raquo;,
+        уникаючи публічних місць і загалом обмежуючи своє пересування.</p>
+      
+      <p class="pg-bodyCopy">Проте, без будь-яких заходів за для його уповільнення, covid-19 буде продовжувати
+        поширюватися експоненціально протягом наступних місяців. Щоб зрозуміти чому так відбувається,
+        давайте змоделюємо розповсюдження вигаданої хвороби серед населення.</p>
+      
+      <p class="pg-bodyCopy">Назвемо нашу умовну хворобу ЗАРАЗА. Вона буде поширюватись навіть легше за covid-19.
+        Нехай коли <span class="well">здорова людина</span> контактує з <span class="sick">хворою людиною</span>
+        то вона одразу заражається.</p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="simulation-two-people">
+    <div class="simulation" id="simulation-two-people" style="position: relative;">
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        У групі всього з п’яти людей це не займе багато часу, щоб усі підхопили ЗАРАЗУ.
+      </p>
+      <p class="pg-bodyCopy">
+        В реальному житті, звісно ж, люди одужують. А <span class="recovered">одужавши</span>, ця людина тепер
+        не може ні переносити ЗАРАЗУ до здорових людей, ні захворіти повторно після контакту з хворими.
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="simulation-recovery-demo">
+    <div class="simulation" id="simulation-recovery-demo" style="position: relative;">
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        Давайте подивимося що станеться, коли ЗАРАЗА пошириться у містечку населенням 200 чоловік. Ми розташуємо всіх у
+        випадковому положенні, щоб вони рухались під випадковим кутом, і зробимо одну людину <span class="sick">хворою</span>.
+      </p>
+      <p class="pg-bodyCopy">
+        Зауважте, як швидко здіймається коричнева крива, яка показує кількість хворих людей,
+        коли хвороба поширюється, а потім як вона зпадає, коли люди одужують.
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="simulation-basic">
+    <div class="pg-skinny summary" id="summary-basic">
+    </div>
+    <div class="simulation" id="simulation-basic" style="position: relative;">
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        Наше вигадане містечко невелике — приблизно розміром з
+        <a href="https://www.google.com/maps/place/%D0%92%D1%96%D1%82%D1%82%D1%96%D0%B5%D1%80,+%D0%90%D0%BB%D1%8F%D1%81%D0%BA%D0%B0+99693,+%D0%A1%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D1%96+%D0%A8%D1%82%D0%B0%D1%82%D0%B8+%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B8/@60.7870303,-148.6710017,12.71z/data=!4m5!3m4!1s0x56b81ad99e929553:0xf6d71b0f8e5d2ee2!8m2!3d60.7730556!4d-148.6838888">
+          Віттіер (Whittier), Аляска, США
+        </a> — тому ЗАРАЗА змогла швидко поширитися на все населення.
+        У такій країні, як Сполучені Штати, з населенням у 330 мільйонів, крива могла б рости ще довгий час, перш ніж почати спадати.
+      </p>
+      <p class="pg-bodyCopy">
+        <em>
+          [<a href="https://www.washingtonpost.com/world/2020/01/22/mapping-spread-new-coronavirus/">
+            Карта поширення коронавірусу в США та в усьому світі</a>]
+        </em>
+      </p>
+      <p class="pg-bodyCopy">
+        Якщо мова йде про справжній covid-19, ми вважаємо за краще уповільнити поширення вірусу, перш ніж він заразить
+        значну частину населення США.Щоб уповільнити ЗАРАЗУ,<br>
+        спробуємо створити <span class="quarantine">примусовий карантин</span>, наприклад, такий, як
+        <a href="https://www.washingtonpost.com/health/unprecedented-chinese-quarantine-could-backfire-experts-say/2020/01/24/db073f3c-3ea4-11ea-8872-5df698785a4e_story.html">
+          уряд Китаю наклав на провінцію Хубей</a>, осередок розповсюдження covid-19.
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="simulation-quarantine">
+    <div class="pg-skinny summary" id="summary-quarantine">
+    </div>
+    <div class="simulation" id="simulation-quarantine" style="position: relative;">
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        Упс! Як і очікували експерти в галузі охорони здоров’я,
+        виявитись неможливим повністю ізолювати хворе населення від здорового.
+      </p>
+      <p class="pg-bodyCopy">
+        Ліана Вень, колишній комісар з питань охорони здоров'я міста Балтімор, пояснила недоцільність примусового карантину
+        у <a href="https://www.washingtonpost.com/health/unprecedented-chinese-quarantine-could-backfire-experts-say/2020/01/24/db073f3c-3ea4-11ea-8872-5df698785a4e_story.html">
+        The Washington Post</a> у січні місяці.
+        "Багато людей працюють у місті і живуть у сусідніх населених пунктах, і навпаки", - сказала Вень.
+        "Чи зашишилися б люди поодаль родини? Як можна повністю перекрити кожну дорогу? Яким чином будуть постачати продукти для населення?"
+      </p>
+      <p class="pg-bodyCopy">
+        Як стверджує Лоуренс О. Гостін, професор глобального права в галузі охорони здоров'я в університеті Джорджтаун:
+        "Насправді, такі випадки блокування дуже рідкісні і ніколи не бувають ефективними".
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        На щастя, є й інші способи уповільнити спалах поширення. Перш за все, службовці охорони здоров’я закликали людей уникати публічних зібрань,
+        частіше залишатися вдома та тримати дистанцію від інших. Якщо люди менш активні і менше взаємодіють між собою, у вірусу є менше можливостей для поширення.
+      </p>
+      <p class="pg-bodyCopy">
+        Деякі люди все одно вийдуть. Можливо, вони не можуть залишитися вдома через свою роботу чи інші
+        зобов'язання, або, можливо, вони просто відмовляються прислухатися до попереджень громадського здоров'я.
+        Ці люди не тільки збільшують шанси захворіти самим, вони, ще й допоможуть поширити ЗАРАЗУ.
+      </p>
+      <p class="pg-bodyCopy">
+        Давайте подивимося, що станеться, коли чверть нашого населення продовжує рухатися, а
+        інші три чверті приймають стратегію, яку медичні експерти називають
+        "<a href="https://www.washingtonpost.com/health/2020/03/10/social-distancing-coronavirus/">соціальним дистанціюванням</a>."
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="simulation-stop">
+    <div class="pg-skinny summary" id="summary-stop">
+    </div>
+    <div class="simulation" id="simulation-stop" style="position: relative;">
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        Чим більше людей дистанціюється тим більше залишається здоровими. І людей буде легше спонукати
+        не відвідувати громадські місця, якщо більшість своїм прикладом покаже, що дотримується карантину.
+      </p>
+      <p class="pg-bodyCopy">
+        "Ми контролюємо бажання бути у публічних просторах, закриваючи громадські простори.
+        Італія закриває всі свої ресторани.
+        Китай закриває все, і ми теж закриваємо все зараз ", - сказав Дрю Гарріс,
+        науковий співробітник охорони здоров'я та доцент кафедри громадського здоров'я Університету Томаса Джефферсона.
+        "Зменшення самої можливості до згромадження допомагає людям дистанціюватись".
+      </p>
+      <p class="pg-bodyCopy">
+        Щоб перевірити ефективність соціального дистанціювання, давайте подивимось що буде,
+        ящо замість четверті населення дозволити рухатись лише одному з восьми людей.
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="simulation-stop-more">
+    <div class="pg-skinny summary" id="summary-stop-more">
+    </div>
+    <div class="simulation" id="simulation-stop-more" style="position: relative;">
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        Чотири симуляції, які ви щойно спостерігали - "Без обмежень", "Спроба карантину", "Помірне соціальне
+        дистанціювання" та "Посилене соціальне дистанціювання" - відбувались рандомно (випадковим чином) у реальному часі.
+        Це означає, що результат цих симуляцій був унікальний для кожного відвідувача цієї сторінки.
+        Якщо ви підніметесь вище по сторінці і перезапустите симуляцію, або перезавантажете сторінку,
+        то результати зміняться.
+      </p>
+      <p class="pg-bodyCopy">
+        Навіть з різними результатами, "Помірне соціальне дистанціювання" зазвичай ефективніше за "Спробу карантину",
+        а "Посилене соціальне дистанціювання", як правило, працює найкраще. Нижче наведено порівняння ваших результатів.
+      </p>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="comparison-chart">
+    <div id="comparison-chart-wrapper">
+      <div id="comparison-chart"></div>
+      <div id="comparison-countdown">
+        <div>Завершується підрахунок...</div>
+        <div class="loading-bar">
+          <div class="loaded"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="block" data-block-type="text">
+    <div class="pg-skinny">
+      <p class="pg-bodyCopy">
+        Вигадана ЗАРАЗА не є covid-19, і ці симуляції значно спрощують складність реального життя.
+        Але так само, як ЗАРАЗА розповсюджується через мережу літаючих кульок на екрані, covid-19
+        поширюється через наші людські мережі - через наші країни, наші міста, наші робочі місця, наші сім'ї.
+        І, як та кулька, що рухається по екрану, поведінка однієї людини може викликати ефект хвилі,
+        який торкнеться інших людей далеко від неї.
+      </p>
+      <p class="pg-bodyCopy">
+        Насправді, ці симуляції не показують точної картини: на відміну від ЗАРАЗИ, covid-19 може вбити.
+        І, хоча рівень летальності точно не відомий, очевидно, що літні люди найбільше ризикують померти від covid-19.
+      </p>
+      <p class="pg-bodyCopy">
+        "Якщо ви хочете, щоб це було більш реалістично," - сказав Дрю Гарріс, побачивши попередній перегляд цієї історії, - "деякі точки повинні зникнути".
+      </p>
+    </div>
+  </div>
+  
+  <div class="pg-skinny pg-source-wrapper">
+    <div class="pg-card--about">
+      <p class="pg-card-title pg-card-margin--top pg-card-margin--sides">Про цю статтю</p>
+      <p class="pg-card-description pg-card-margin--sides">
+        Дані для діаграми у верхній частині цієї статті, що показує кількість зареєстрованих випадків у Сполучених Штатах,
+        були зібрані Центром системних наук та інженерії університету Джона Хопкінса та доступні для
+        <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">
+          завантаження на GitHub
+        </a>.
+        Кількість реальних випадків у США, ймовірно, набагато більша, та через
+        <a href="https://www.washingtonpost.com/health/2020/02/25/cdc-coronavirus-test/">
+          проблеми з тестами на коронавірус</a> або через те, що багато випадків настільки легкі,
+        що інфіковані не відвідують лікаря чи лікарню, виявити точну кількість просто неможливо.
+      </p>
+      <p class="pg-card-description pg-card-margin--sides"></p>
+    </div>
+  </div>
+  
+  <div class="pg-source-wrapper">
+    <div class="pg-chart pg-border--bottom">
+      <footer class="pg-chart-footer"></footer>
+    </div>
+  </div>
+
+
+</article>
+<!-- START FOOTER -->
+
+<footer>
+
+</footer>
+
+<!-- /END FOOTER -->
+<script src="js/npm.js"></script>
+<script src="js/base.js"></script>
+
+</body>
+</html>
