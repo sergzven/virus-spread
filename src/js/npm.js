@@ -20,3 +20,16 @@
 
 // Импортируем другие js-файлы
 // custom.js
+
+
+function scrollToTarget(target) {
+  if(!target) return false;
+  var item = document.querySelector(target);
+  if(item){
+    var pos = item.offsetTop;
+    window.scrollTo({
+      top: pos,
+      behavior: "smooth"
+    });
+  }
+}
